@@ -5,6 +5,7 @@ void ofApp::setup(){
 
 	ofSetFrameRate(8);
 	ofBackground(0);
+    
 }
 
 //--------------------------------------------------------------

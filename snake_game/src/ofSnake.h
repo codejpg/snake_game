@@ -22,7 +22,9 @@ public:
     void setDir(int x, int y);
     bool eat(ofVec2f foodPos);
 
-    ofVec2f myPos{ 0,0 };
+    ofVec2f myPos { 0, 0 };
+    vector<ofVec2f> snakePos;
+    bool justAte = false;
 
     
     
