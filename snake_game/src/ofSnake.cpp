@@ -18,20 +18,22 @@ ofSnake::~ofSnake() {
 }
 
 void ofSnake::updateSnake() {
- 
+    ofVec2f snakeFront = snakePos.front();
+    snakeFront.x = snakeFront.x + xSpeed * scl;
+    snakeFront.y = snakeFront.y + ySpeed * scl;
+
+    snakeFront.x = ofClamp(snakeFront.x, 0, ofGetWidth() - scl);
+    snakeFront.y = ofClamp(snakeFront.y, 0, ofGetHeight() - scl);
+    
+    snakePos.insert(snakePos.begin(), snakeFront);
+    
     if(justAte){
-        snakePos.push_back(snakePos[0]);
         std::cout << snakePos.size() << std::endl;
         justAte = false;
+    } else{
+        snakePos.pop_back();
     }
-    for(int i = 0; i < snakePos.size(); i++){
-    snakePos[i].x = snakePos[i].x + xSpeed * scl;
-    snakePos[i].y = snakePos[i].y + ySpeed * scl;
 
-    //min-max range maped to canvas
-    snakePos[i].x = ofClamp(snakePos[i].x, 0, ofGetWidth() - scl);
-    snakePos[i].y = ofClamp(snakePos[i].y, 0, ofGetHeight() - scl);
-    }
     
 
 }
