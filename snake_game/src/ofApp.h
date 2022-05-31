@@ -25,13 +25,17 @@ class ofApp : public ofBaseApp{
     ofTrueTypeFont smallFont;
     string text;
     string btnTxt;
+    string againBtnTxt;
     string pauseTxt;
     string gameOverTxt;
     int screen = 1;
     const int OF_KEY_SPACE = 32;
     bool pause;
+    bool gameover;
     bool startBtnClicked = false;
-    int score = 0;
+    bool againBtnClicked = false;
+    string score = "0";
     ofRectangle startBtn;
+    ofRectangle againBtn;
     
 };
