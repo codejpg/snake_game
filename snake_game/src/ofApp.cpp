@@ -52,9 +52,10 @@ void ofApp::draw(){
         screen = 2;
         gameover = false;
         mySnake.newSnake();
+        againBtnClicked = false;
     } else  if(pause){
         screen = 3;
-    }else  if(gameover){
+    } if(gameover){
         screen = 4;
     }
     switch (screen){

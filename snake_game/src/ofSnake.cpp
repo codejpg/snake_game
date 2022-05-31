@@ -9,6 +9,7 @@ ofSnake::ofSnake() {
 
     color.setHex(0x23391C);
     snakePos = vector<ofVec2f>();
+    pPos = vector<ofVec2f>();
     snakePos.push_back(ofVec2f(0,0));
 
 	head.load("snakehead.png");
@@ -74,9 +75,9 @@ void ofSnake::drawSnake() {
     }
 }
 bool ofSnake::killSnake() {
-
+    pScore = (snakePos.size()-1)*10;
     if(dead){
-        pScore = (snakePos.size()-1)*10;
+        pPos.push_back(snakePos[0]);
             return true;
         } else{
             return false;
@@ -86,6 +87,8 @@ bool ofSnake::killSnake() {
 }
 void ofSnake::newSnake(){
     dead = false;
+  
+    snakePos.push_back(pPos[0]);
 }
 
 

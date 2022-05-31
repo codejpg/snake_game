@@ -28,7 +28,7 @@ public:
     bool killSnake();
     bool dead = false;
     int pScore;
-
+    vector<ofVec2f> pPos;
     ofVec2f myPos { 0, 0 };
     vector<ofVec2f> snakePos;
     bool justAte = false;
