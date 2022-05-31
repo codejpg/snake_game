@@ -30,6 +30,8 @@ void ofApp::update(){
 
 	if (mySnake.eat(myFood.myPos)) {
 		myFood.pickLocation();
+		myFood.color = ofColor(ofRandom(0, 255));
+
 	}
   
 
@@ -119,24 +121,38 @@ void ofApp::keyPressed(int key){
 	switch (key) {
 
 	case OF_KEY_LEFT: // left
+
             if(mySnake.getDir() != "right" ){
                 mySnake.setDir(-1, 0);
+                mySnake.head.rotate90(0 - rotation);
+                rotation = 0;
             }
 		break;
 	case OF_KEY_RIGHT: // right
             if(mySnake.getDir() != "left" ){
                 mySnake.setDir(1, 0);
+                mySnake.head.rotate90(2 - rotation);
+                rotation = 2;
             }
 		break;
 	case OF_KEY_UP: // up
             if(mySnake.getDir() != "down" ){
                 mySnake.setDir(0, -1);
+                mySnake.head.rotate90(1 - rotation);
+                rotation = 1;
             }
-		break;
+
 	case OF_KEY_DOWN: // down
+
             if(mySnake.getDir() != "up" ){
                 mySnake.setDir(0, 1);
+                mySnake.head.rotate90(3 - rotation);
+                rotation = 3;
             }
+
+		
+	
+
 		break;
   
 	}

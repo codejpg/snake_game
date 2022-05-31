@@ -33,8 +33,13 @@ class ofApp : public ofBaseApp{
     bool pause;
     bool gameover;
     bool startBtnClicked = false;
+
     bool againBtnClicked = false;
     string score = "0";
+
+	int rotation;
+	int greyscale;
+
     ofRectangle startBtn;
     ofRectangle againBtn;
     
