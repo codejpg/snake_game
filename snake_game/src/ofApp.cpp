@@ -4,7 +4,7 @@
 void ofApp::setup(){
 
 	ofSetFrameRate(8);
-    ofBackground(164,199,32);
+    ofBackground(35,173,53);
 
     
     headFont.load("MechanismoRegular.ttf", 52);
@@ -32,16 +32,23 @@ void ofApp::update(){
     }
 
 	if (mySnake.eat(myFood.myPos)) {
-		myFood.pickLocation();
 		
+        while(mySnake.checkCollision(myFood.myPos.x, myFood.myPos.y)){
+            myFood.pickLocation();
+        }
+  
         if(foodColorIndex==0){
-            myFood.color = ofColor(0x528CDE);
+            myFood.color = ofColor(82,140,222);
         }else if (foodColorIndex == 1){
-            myFood.color = ofColor(0xDE3A26);
+            myFood.color = ofColor(222,58,38);
         }else if (foodColorIndex == 2){
-            myFood.color = ofColor(0x912C20);
-        } else if(foodColorIndex > 2) {
-            foodColorIndex = 0;
+            myFood.color = ofColor(145,44,32);
+        }else if (foodColorIndex == 3){
+            myFood.color = ofColor(235,168,145);
+        }else if (foodColorIndex == 4){
+            myFood.color = ofColor(82,214,222);
+        }else if(foodColorIndex > 4) {
+            foodColorIndex = -1;
         }
         foodColorIndex++;
 
@@ -97,6 +104,7 @@ void ofApp::draw(){
         case 2:
             mySnake.drawSnake();
             myFood.drawFood();
+            ofSetHexColor(0xFFFFFF);
             smallFont.drawString("score: " + score, 20,ofGetHeight()-25 );
             break;
 

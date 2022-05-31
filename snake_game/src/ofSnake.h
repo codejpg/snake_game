@@ -24,6 +24,7 @@ public:
     void setDir(int x, int y);
     string getDir();
     bool eat(ofVec2f foodPos);
+    bool checkCollision(int x, int y);
     int getScore();
     bool killSnake();
     bool dead = false;
@@ -32,6 +33,7 @@ public:
     ofVec2f myPos { 0, 0 };
     vector<ofVec2f> snakePos;
     bool justAte = false;
+    
 
 	ofImage head;
     ofImage tail;

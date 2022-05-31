@@ -70,7 +70,7 @@ void ofSnake::drawSnake() {
 
     ofSetColor(color);
 	head.draw(snakePos[0].x, snakePos[0].y);
-    tail.draw(snakePos[snakePos.size()].x, snakePos[snakePos.size()].y);
+    //tail.draw(snakePos[snakePos.size()].x, snakePos[snakePos.size()].y);
 
     for(int i = 1; i < snakePos.size(); i++){
 
@@ -92,6 +92,18 @@ void ofSnake::newSnake(){
     dead = false;
   
     snakePos.push_back(pPos[0]);
+}
+
+//doesn't work yet
+bool ofSnake::checkCollision(int x, int y){
+    for(int i = 0 ; i < snakePos.size(); i++){
+        if(x == snakePos[i].x && y == snakePos[i].y ){
+            return true;
+    } else{
+        return false;
+    }
+    }
+
 }
 
 
