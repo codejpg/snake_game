@@ -8,20 +8,33 @@ ofSnake::ofSnake() {
     ySpeed = 0;
 
     color.set(255);
+    snakePos = vector<ofVec2f>();
+    snakePos.push_back(ofVec2f(0,0));
+
 }
 
 ofSnake::~ofSnake() {
-
+    
 }
 
 void ofSnake::updateSnake() {
+    ofVec2f snakeFront = snakePos.front();
+    snakeFront.x = snakeFront.x + xSpeed * scl;
+    snakeFront.y = snakeFront.y + ySpeed * scl;
 
-    myPos.x = myPos.x + xSpeed * scl;
-    myPos.y = myPos.y + ySpeed * scl;
+    snakeFront.x = ofClamp(snakeFront.x, 0, ofGetWidth() - scl);
+    snakeFront.y = ofClamp(snakeFront.y, 0, ofGetHeight() - scl);
+    
+    snakePos.insert(snakePos.begin(), snakeFront);
+    
+    if(justAte){
+        std::cout << snakePos.size() << std::endl;
+        justAte = false;
+    } else{
+        snakePos.pop_back();
+    }
 
-    //min-max range maped to canvas
-    myPos.x = ofClamp(myPos.x, 0, ofGetWidth() - scl);
-    myPos.y = ofClamp(myPos.y, 0, ofGetHeight() - scl);
+    
 
 }
 
@@ -29,7 +42,11 @@ void ofSnake::updateSnake() {
 void ofSnake::drawSnake() {
 
     ofSetColor(color);
-    ofDrawRectangle(myPos.x, myPos.y, scl, scl);
+    
+    for(int i = 0; i < snakePos.size(); i++){
+        ofDrawRectangle(snakePos[i].x, snakePos[i].y, scl, scl);
+    }
+
     
 }
 
@@ -43,9 +60,11 @@ void ofSnake::setDir(int x, int y) {
 
 bool ofSnake::eat(ofVec2f foodPos) {
 
-    if (myPos.distance(foodPos) < scl) {
+    if (snakePos[0].distance(foodPos) < scl) {
+        justAte = true;
         
         std::cout << " eat !" << std::endl;
+       
 
         return true;
     }
