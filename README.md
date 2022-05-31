@@ -28,5 +28,8 @@ Finally the front() function allows access to the first element in the vector an
 Functionality added:
 - Snake growth
 - Start screen, pause screen, game over
+- Buttons to start and restart game
 - Added font + stylized visuals
-- Snake loops over game edges 
+- Added a custom head for the snake
+- Food changes color after being eaten
+- Snake loops over game edges (may not be used in the end)
