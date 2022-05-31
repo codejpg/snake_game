@@ -29,6 +29,8 @@ public:
     vector<ofVec2f> snakePos;
     bool justAte = false;
 
+	ofImage head;
+
     
     
 };

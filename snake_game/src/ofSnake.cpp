@@ -11,6 +11,9 @@ ofSnake::ofSnake() {
     snakePos = vector<ofVec2f>();
     snakePos.push_back(ofVec2f(0,0));
 
+	head.load("snakehead.png");
+	head.resize(scl, scl);
+
 }
 
 ofSnake::~ofSnake() {
@@ -61,9 +64,10 @@ void ofSnake::updateSnake() {
 void ofSnake::drawSnake() {
 
     ofSetColor(color);
+	head.draw(snakePos[0].x, snakePos[0].y);
     
-    for(int i = 0; i < snakePos.size(); i++){
-        ofDrawRectRounded(snakePos[i].x, snakePos[i].y, scl, scl,10);
+    for(int i = 1; i < snakePos.size(); i++){
+        ofDrawRectRounded(snakePos[i].x, snakePos[i].y, scl, scl, 10);
     }
 }
 bool ofSnake::killSnake() {

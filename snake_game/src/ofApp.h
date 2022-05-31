@@ -32,6 +32,8 @@ class ofApp : public ofBaseApp{
     bool pause;
     bool startBtnClicked = false;
     int score = 0;
+	int rotation;
+	int greyscale;
     ofRectangle startBtn;
     
 };
