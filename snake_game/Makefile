@@ -6,7 +6,7 @@ endif
 
 # make sure the the OF_ROOT location is defined
 ifndef OF_ROOT
-	OF_ROOT=$(realpath ../../../Developer/openFrameworks/macOS_12_3_1/../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1)
+	OF_ROOT=$(realpath ../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1/../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1)
 endif
 
 # call the project makefile!

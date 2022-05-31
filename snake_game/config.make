@@ -6,7 +6,7 @@
 ################################################################################
 # OF ROOT
 #   The location of your root openFrameworks installation
-#       (default) OF_ROOT = ../../../Developer/openFrameworks/macOS_12_3_1/../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1 
+#       (default) OF_ROOT = ../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1/../../../Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1/Developer/openFrameworks/macOS_12_3_1 
 ################################################################################
 OF_ROOT = /Users/anna/Developer/openFrameworks/macOS_12_3_1
 

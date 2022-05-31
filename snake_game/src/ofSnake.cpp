@@ -22,8 +22,30 @@ void ofSnake::updateSnake() {
     snakeFront.x = snakeFront.x + xSpeed * scl;
     snakeFront.y = snakeFront.y + ySpeed * scl;
 
+<<<<<<< HEAD
     snakeFront.x = ofClamp(snakeFront.x, -1, ofGetWidth() - scl);
     snakeFront.y = ofClamp(snakeFront.y, scl+1, ofGetHeight() - scl);
+=======
+    //snakeFront.x = ofClamp(snakeFront.x, -1, ofGetWidth() - scl);
+    //snakeFront.y = ofClamp(snakeFront.y, scl+1, ofGetHeight() - scl);
+
+	if (snakeFront.x > ofGetWidth() - scl) {
+		snakeFront.x = -1;
+	}
+
+	if (snakeFront.x < -1) {
+		snakeFront.x = ofGetWidth();
+	}
+
+	if (snakeFront.y > ofGetHeight() - scl) {
+		snakeFront.y = 1;
+
+	}
+
+	else if (snakeFront.y < 1) {
+		snakeFront.y = ofGetHeight();
+	}
+>>>>>>> 5de70f766ea7644c6539d65d7739be2e7b761a40
     
     snakePos.insert(snakePos.begin(), snakeFront);
     
@@ -33,8 +55,12 @@ void ofSnake::updateSnake() {
     } else{
         snakePos.pop_back();
     }
+<<<<<<< HEAD
     
    
+=======
+ 
+>>>>>>> 5de70f766ea7644c6539d65d7739be2e7b761a40
     
 
 }
