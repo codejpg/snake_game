@@ -56,11 +56,11 @@ void ofApp::draw(){
             
             ofSetHexColor(0xFFFFFF);
      
-<<<<<<< HEAD
-            middleFont.drawString(btnTxt, ofGetWidth()/2 - middleFont.stringWidth(btnTxt)/2, ofGetHeight()/2 + middleFont.stringHeight(btnTxt)/2 );
-=======
+
+   
+
             middleFont.drawString(btnTxt, ofGetWidth()/2 - middleFont.stringWidth(btnTxt)/2, ofGetHeight()/2 + middleFont.stringHeight(btnTxt)/2 + 25 );
->>>>>>> 5de70f766ea7644c6539d65d7739be2e7b761a40
+
           
             ofNoFill();
             ofSetLineWidth(5);
