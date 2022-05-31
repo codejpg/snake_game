@@ -34,6 +34,7 @@ public:
     bool justAte = false;
 
 	ofImage head;
+    ofImage tail;
 
     
     

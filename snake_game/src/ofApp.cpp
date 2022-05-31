@@ -18,6 +18,9 @@ void ofApp::setup(){
     
     startBtn.set(ofGetWidth()/2-100, ofGetHeight()/2, 200, 50);
     againBtn.set(ofGetWidth()/2-100, ofGetHeight()/2+headFont.stringHeight(text)*3, 200, 50);
+
+ 
+
     
 }
 
@@ -30,7 +33,17 @@ void ofApp::update(){
 
 	if (mySnake.eat(myFood.myPos)) {
 		myFood.pickLocation();
-		myFood.color = ofColor(ofRandom(0, 255));
+		
+        if(foodColorIndex==0){
+            myFood.color = ofColor(0x528CDE);
+        }else if (foodColorIndex == 1){
+            myFood.color = ofColor(0xDE3A26);
+        }else if (foodColorIndex == 2){
+            myFood.color = ofColor(0x912C20);
+        } else if(foodColorIndex > 2) {
+            foodColorIndex = 0;
+        }
+        foodColorIndex++;
 
 	}
   
@@ -84,7 +97,6 @@ void ofApp::draw(){
         case 2:
             mySnake.drawSnake();
             myFood.drawFood();
-            ofSetHexColor(0xFFFFFF);
             smallFont.drawString("score: " + score, 20,ofGetHeight()-25 );
             break;
 

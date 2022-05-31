@@ -14,6 +14,9 @@ ofSnake::ofSnake() {
 
 	head.load("snakehead.png");
 	head.resize(scl, scl);
+    tail.load("snakehead.png");
+    tail.resize(scl, scl);
+   
 
 }
 
@@ -67,7 +70,7 @@ void ofSnake::drawSnake() {
 
     ofSetColor(color);
 	head.draw(snakePos[0].x, snakePos[0].y);
-    
+    tail.draw(snakePos[snakePos.size()].x, snakePos[snakePos.size()].y);
 
     for(int i = 1; i < snakePos.size(); i++){
 

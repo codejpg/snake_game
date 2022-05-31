@@ -43,4 +43,5 @@ class ofApp : public ofBaseApp{
     ofRectangle startBtn;
     ofRectangle againBtn;
     
+    int foodColorIndex = 0;
 };

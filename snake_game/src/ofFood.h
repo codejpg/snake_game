@@ -13,6 +13,8 @@ public:
     
     ofColor color;
     ofVec2f myPos{};
+    
+  
 
     void pickLocation();
     void drawFood();
