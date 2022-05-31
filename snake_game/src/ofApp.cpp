@@ -92,7 +92,7 @@ void ofApp::draw(){
     }
     if(screen == 3){
         ofSetHexColor(0x23391C);
-        headFont.drawString(pauseTxt, ofGetWidth()/2-headFont.stringWidth(pauseTxt)/2-headFont.stringWidth(text)/2,ofGetHeight()/2-headFont.stringHeight(pauseTxt)/2);
+        headFont.drawString(pauseTxt, ofGetWidth()/2-headFont.stringWidth(pauseTxt)/2,ofGetHeight()/2-headFont.stringHeight(pauseTxt)/2);
         
     } else if(screen == 4){
         ofSetHexColor(0x23391C);
